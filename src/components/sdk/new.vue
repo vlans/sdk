@@ -20,6 +20,7 @@
             <websocket></websocket>
             <Divider />
         </div>
+        <pre v-highlightjs="sdk" v-if="sdk"><code class="javascript"></code></pre>
         <div class="create-sdk-btn-container">
             <Button type="success" @click="createSDK" long size="large">添加模板并生成 SDK</Button>
         </div>
@@ -36,7 +37,8 @@ export default {
             attribute: false,
             target: false,
             websocket: false,
-            customSDK: {}
+            customSDK: {},
+            sdk: ''
         }
     },
     methods: {
@@ -46,7 +48,8 @@ export default {
                 return
             }
 
-            await this.$q.sendSDKConfig(this.customSDK)
+            const { data } = await this.$q.sendSDKConfig(this.customSDK)
+            this.sdk = `<script src=${data.url}><\/script>` // eslint-disable-line
             this.$Message.success('操作成功')
         },
         invalidSdkOptions () {

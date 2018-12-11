@@ -12,7 +12,6 @@ import $q from './request'
 
 import store from './store'
 
-import './library/matrix.min'
 // 重置样式
 import './common/styles/reset.css'
 
