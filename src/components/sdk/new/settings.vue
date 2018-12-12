@@ -11,7 +11,7 @@
                         </Select>
                     </Input>
                 </FormItem>
-                <FormItem label="发送方式" required>
+                <!-- <FormItem label="发送方式" required>
                     <Select v-model="settings.type" multiple placeholder="发送方式">
                         <Option value="ALL">ALL</Option>
                         <Option value="GET">GET</Option>
@@ -19,7 +19,7 @@
                         <Option value="PUT">PUT</Option>
                         <Option value="DELETE">DELETE</Option>
                     </Select>
-                </FormItem>
+                </FormItem> -->
                 <FormItem label="授信域名">
                     <Row v-for="(item, index) in settings.creditDomain"
                         class="credit-domain"
@@ -43,7 +43,7 @@
                 <FormItem label="监控方式" required>
                     <CheckboxGroup v-model="settings.mode">
                         <Checkbox label="MutationObserver"></Checkbox>
-                        <Checkbox label="事件委托"></Checkbox>
+                        <Checkbox label="事件代理"></Checkbox>
                         <Checkbox label="DOM Attribute"></Checkbox>
                         <Checkbox label="DOM Target"></Checkbox>
                     </CheckboxGroup>

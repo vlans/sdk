@@ -91,10 +91,7 @@ export default {
                 {
                     name: eventName,
                     runError: false,
-                    code: `
-                    var ev = 1;
-var mx = 2;
-`
+                    code: ''
                 }
             )
 

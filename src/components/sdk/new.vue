@@ -53,7 +53,7 @@ export default {
             this.$Message.success('操作成功')
         },
         invalidSdkOptions () {
-            const { api, mode, type, events } = this.customSDK
+            const { api, mode, events } = this.customSDK
 
             if (!api || !api.address) {
                 const config = {
@@ -64,14 +64,14 @@ export default {
                 return true
             }
 
-            if (!type || !type.length) {
-                const config = {
-                    content: '请选择发送方式',
-                    duration: 2.5
-                }
-                this.$Message.error(config)
-                return true
-            }
+            // if (!type || !type.length) {
+            //     const config = {
+            //         content: '请选择发送方式',
+            //         duration: 2.5
+            //     }
+            //     this.$Message.error(config)
+            //     return true
+            // }
 
             if (!mode || !mode.length) {
                 const config = {

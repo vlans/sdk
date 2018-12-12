@@ -11,7 +11,6 @@ import router from './router'
 import $q from './request'
 
 import store from './store'
-
 // 重置样式
 import './common/styles/reset.css'
 
@@ -30,7 +29,10 @@ Vue.config.devtools = mode
 Vue.config.productionTip = mode
 
 Vue.prototype.$q = $q
-
+window.onerror = function (m, u, l, c, e) {
+    console.log(m, u, l, c, e)
+    return true
+}
 Vue.use(iView)
 Vue.use(VueHighlightJS)
 Vue.use(codemirror, {
